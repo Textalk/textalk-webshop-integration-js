@@ -1,6 +1,8 @@
 Textalk Webshop Integration Example
 ===================================
 
+[![Build Status](https://travis-ci.org/Textalk/textalk-webshop-integration-js.png)](https://travis-ci.org/Textalk/textalk-webshop-integration-js)
+
 This is an example of an external integration designed to be configurable from inside Textalk
 Webshop admin.
 
@@ -19,6 +21,14 @@ cp config.js.sample config.js
 make test
 node index.js
 ```
+
+The integration server is now available on http://localhost:3000/ with the following settings:
+
+* auth:           testkey
+* settingsSchema: http://yourdomain:3000/schema.json
+* settingsForm:   http://yourdomain:3000/form.json
+* settingsUrl:    http://yourdomain:3000/settings/
+
 
 Todo
 ----
