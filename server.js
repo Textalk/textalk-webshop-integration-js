@@ -24,8 +24,7 @@ var fs          = require('fs')
 var bodyParser  = require('body-parser')
 var Integration = require('./models/integration.js')
 
-var app            = express()
-var expressLogFile = fs.createWriteStream('./logs/express.log', {flags: 'a'})
+var app = express()
 
 // Configuration
 if (coverage) {app.use('/coverage', istanbulMiddleware.createHandler())}

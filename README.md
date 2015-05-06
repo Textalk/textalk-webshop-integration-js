@@ -4,8 +4,18 @@ Textalk Webshop Integration Example
 This is an example of an external integration designed to be configurable from inside Textalk
 Webshop admin.
 
-Right now, this is just a bare skeleton that stores settings for each integration instance.  It
-will be updated with API subscriptions to act on for integration.
+This is a bare skeleton that handles settings for each integration instance.
+
+
+Install
+-------
+```bash
+git clone https://github.com/Textalk/textalk-webshop-integration-js.git
+cd textalk-webshop-integration-js
+npm install
+make test
+node index.js
+```
 
 Todo
 ----
