@@ -11,7 +11,9 @@ This is a bare skeleton that handles settings for each integration instance.
 
 Install
 -------
-This is a node.js application, expecting node and npm to be available on the system.
+
+This is a node.js application, expecting node and npm to be available on the system.  Use node.js
+0.10, or you might run into trouble in building sqlite3.
 
 ```bash
 git clone https://github.com/Textalk/textalk-webshop-integration-js.git
