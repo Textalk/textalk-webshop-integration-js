@@ -2,6 +2,7 @@ Textalk Webshop Integration Example
 ===================================
 
 [![Build Status](https://travis-ci.org/Textalk/textalk-webshop-integration-js.png)](https://travis-ci.org/Textalk/textalk-webshop-integration-js)
+[![Coverage Status](https://coveralls.io/repos/Textalk/textalk-webshop-integration-js/badge.png)](https://coveralls.io/r/Textalk/textalk-webshop-integration-js)
 
 This is an example of an external integration designed to be configurable from inside Textalk
 Webshop admin.
