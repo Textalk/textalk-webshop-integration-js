@@ -97,7 +97,7 @@ describe('Routing', function() {
     it('should register a new integration', function(done) {
       request(baseUrl)
         .post('/settings/')
-        .set('Authorization',  'IntegrationKey key="' + config.integrationKey + '"')
+        .set('Authorization',  'IntegrationKey key=' + config.integrationKey)
         .set('X-Webshop-Id',   '22222')
         .set('X-Webshop-Auth', 'testauth')
         .send({email: 'test@example.com'})
@@ -140,7 +140,7 @@ describe('Routing', function() {
     it('should get settings', function(done) {
       request(baseUrl)
         .get(integrationPath)
-        .set('Authorization',  'IntegrationKey key="' + integrationKey + '"')
+        .set('Authorization',  'IntegrationKey key=' + integrationKey)
         .end(function(err, res) {
           if (err) {throw err}
 
@@ -166,7 +166,7 @@ describe('Routing', function() {
     it('should update data', function(done) {
       request(baseUrl)
         .put(integrationPath)
-        .set('Authorization',  'IntegrationKey key="' + integrationKey + '"')
+        .set('Authorization',  'IntegrationKey key=' + integrationKey)
         .send({email: 'new@email.now'})
         .end(function(err, res) {
           if (err) {throw err}
@@ -177,7 +177,7 @@ describe('Routing', function() {
           // Must GET to see if it actually changed.
           request(baseUrl)
             .get(integrationPath)
-            .set('Authorization',  'IntegrationKey key="' + integrationKey + '"')
+            .set('Authorization',  'IntegrationKey key=' + integrationKey)
             .end(function(err, res) {
 
               res.body.should.have.property('email')

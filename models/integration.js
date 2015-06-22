@@ -15,7 +15,7 @@ function Integration(db, config) {
   return {
     create: function(req, res) {
       // Check authorization
-      if (req.header('Authorization') !== 'IntegrationKey key="' + config.integrationKey + '"') {
+      if (req.header('Authorization') !== 'IntegrationKey key=' + config.integrationKey) {
         return res.sendStatus(403)
       }
 
@@ -36,12 +36,14 @@ function Integration(db, config) {
       var id = req.params.integration
 
       // Lookup id in db.
-      db.get('SELECT * FROM integrations WHERE id = ?', id)
+      db.get('SELECT email, key FROM integrations WHERE id = ?', id)
         .then(function(integrationData) {
           // Check authorization
-          if (req.header('Authorization') !== 'IntegrationKey key="' + integrationData.key + '"') {
+          if (req.header('Authorization') !== 'IntegrationKey key=' + integrationData.key) {
             return res.sendStatus(403)
           }
+
+          delete integrationData.key
 
           res.json(integrationData)
         })
@@ -54,7 +56,7 @@ function Integration(db, config) {
       db.get('SELECT * FROM integrations WHERE id = ?', id)
         .then(function(integrationData) {
           // Check authorization
-          if (req.header('Authorization') !== 'IntegrationKey key="' + integrationData.key + '"') {
+          if (req.header('Authorization') !== 'IntegrationKey key=' + integrationData.key) {
             return res.sendStatus(403)
           }
 
