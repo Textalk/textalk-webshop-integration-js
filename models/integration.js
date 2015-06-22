@@ -43,7 +43,7 @@ function Integration(db, config) {
             return res.sendStatus(403)
           }
 
-	  delete integrationData.key
+          delete integrationData.key
 
           res.json(integrationData)
         })
