@@ -67,7 +67,7 @@ function Integration(db, config) {
         })
     },
 
-    delete: function(res, res) {
+    delete: function(req, res) {
         var id = req.params.integration
 
         db.get('SELECT key FROM integrations WHERE id = ?', id)
