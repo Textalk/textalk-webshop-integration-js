@@ -65,6 +65,23 @@ function Integration(db, config) {
               res.sendStatus(204)
             })
         })
+    },
+
+    delete: function(res, res) {
+        var id = req.params.integration
+
+        db.get('SELECT key FROM integrations WHERE id = ?', id)
+          .then(function(integrationData) {
+          // Check authorization
+          if (req.header('Authorization') !== 'IntegrationKey key=' + integrationData.key) {
+            return res.sendStatus(403)
+          }
+
+          db.run('DELETE FROM integrations WHERE id = ?', id)
+            .then(function() {
+                return res.sendStatus(204)
+            })
+        })
     }
   }
 }
